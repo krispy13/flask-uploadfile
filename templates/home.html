@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ML</title>
+	<link rel="stylesheet" type="text/css" href="..\static\style.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<h2 STYLE="color:#f2eac5;">Spam Detector For SMS Messages</h2>
+
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Message Here</p>
+<!--		<textarea name="message" rows="4" cols="50"></textarea>-->
+		<br/>
+		<input type="file" name="message" value="Upload csv file"><br>
+		<input type="submit" class="btn-info" value="Predict">
+
+	</form>
+	</div>
+	<p style="font-size:20;"><b>Result</b></p>
+	<div class="results">
+{% if download %}
+<a class="btn btn-success" href="{{url_for('download')}}">Download</a>
+{% endif %}
+<!--	{% if prediction == 1%}-->
+<!--	<h2>Spam</h2>-->
+<!--	{% elif prediction == 0%}-->
+<!--	<h2>Ham</h2>-->
+<!--	{% endif %}-->
+
+	</div>
+
+</body>
+</html>
